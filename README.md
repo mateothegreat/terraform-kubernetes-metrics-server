@@ -4,15 +4,24 @@ Metrics Server collects resource metrics from Kubelets and exposes them in Kuber
 use by Horizontal Pod Autoscaler and Vertical Pod Autoscaler. Metrics API can also be accessed by kubectl top, making it
 easier to debug autoscaling pipelines.
 
-## Installing
+## Usage
 
-```bash
-terraform init
-terraform apply
-```
+```hcl
+provider "kubernetes" {
 
-```bash
+    config_path = "~/.kube/config"
 
+}
+
+module "metrics-server" {
+
+    source  = "mateothegreat/metrics-server/kubernetes"
+    version = "0.0.1"
+
+    name      = "metrics-server"
+    namespace = "kube-system"
+
+}
 ```
 
 ## See also
