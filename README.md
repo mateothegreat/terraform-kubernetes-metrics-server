@@ -1,4 +1,4 @@
-# Kubernetes metrcis-server via Terraform
+# Kubernetes metrics-server via Terraform
 
 Metrics Server collects resource metrics from Kubelets and exposes them in Kubernetes apiserver through Metrics API for
 use by Horizontal Pod Autoscaler and Vertical Pod Autoscaler. Metrics API can also be accessed by kubectl top, making it
@@ -18,7 +18,7 @@ provider "kubernetes" {
 module "metrics-server" {
 
     source  = "mateothegreat/metrics-server/kubernetes"
-    version = "0.0.2"
+    version = "0.0.3"
 
     name      = "metrics-server"
     namespace = "kube-system"
