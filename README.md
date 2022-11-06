@@ -4,6 +4,8 @@ Metrics Server collects resource metrics from Kubelets and exposes them in Kuber
 use by Horizontal Pod Autoscaler and Vertical Pod Autoscaler. Metrics API can also be accessed by kubectl top, making it
 easier to debug autoscaling pipelines.
 
+> https://registry.terraform.io/modules/mateothegreat/metrics-server/kubernetes/latest
+
 ## Usage
 
 ```hcl
@@ -16,7 +18,7 @@ provider "kubernetes" {
 module "metrics-server" {
 
     source  = "mateothegreat/metrics-server/kubernetes"
-    version = "0.0.1"
+    version = "0.0.2"
 
     name      = "metrics-server"
     namespace = "kube-system"
@@ -26,7 +28,10 @@ module "metrics-server" {
 
 ## See also
 
+* https://matthewdavis.io
+* https://registry.terraform.io/modules/mateothegreat/metrics-server/kubernetes/latest
 * https://github.com/kubernetes-sigs/metrics-server
+
 ## Requirements
 
 No requirements.
